@@ -1,0 +1,26 @@
+@import 'mixins';
+@import 'variables';
+@import 'fonts';
+
+
+
+
+
+//card tiles (Like Google Material Design)
+.cards {
+  background: white;
+  margin-bottom: .5rem;
+  width: 100%;
+  float:left;
+  max-width: $bp-maxwidth;
+  -webkit-backface-visibility: hidden;
+}
+
+.no-padding {
+  padding: 0!important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0!important;
+}
+

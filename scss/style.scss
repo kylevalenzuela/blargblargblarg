@@ -1,0 +1,61 @@
+@import 'mixins';
+@import 'variables';
+@import 'fonts';
+@import 'global';
+@import 'typography';
+@import 'gridsystem';
+
+
+/**************
+GLOBAL STYLINGS 
+****************/
+
+::selection {
+  
+}
+
+* { margin: 0; padding: 0; -webkit-overflow-scrolling: touch;} //resets margins and padding and add momentum scrolling for iOS
+
+
+body {
+  width: 100%;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+div {
+  display: block;
+}
+
+/* Responsive Images, Video  */
+
+img {
+  -ms-interpolation-mode: bicubic;
+  border: 0;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  -webkit-backface-visibility: hidden;
+  @include vendor-prefix(transform, translate3d(0, 0, 0));
+
+}
+
+video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+iframe {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+
+
+* html .group, *:first-child+html .group { zoom: 1; } /* First selector = IE6, Second Selector = IE 7 */
+
+* {box-sizing: border-box; }
+
+

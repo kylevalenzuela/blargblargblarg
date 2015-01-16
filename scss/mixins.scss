@@ -1,0 +1,95 @@
+/******************   
+MIXINS     
+*******************/
+
+/*Vendor prefix mixin
+ Use: 
+ @include vendor-prefix(name, value)
+*/
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+
+/*
+SIMPLE BLOCK GRID (from css-tricks.com)
+*/
+@mixin rowMachine($numPerRow, $margin) {
+  width: ((100% - (($numPerRow) * $margin)) / $numPerRow);
+   &:nth-child(#{$numPerRow}n) {
+    margin-right: 0!important;
+  }
+
+  &:nth-child(n) {
+    margin-bottom: $margin;
+    margin-right: $margin;
+  }
+ 
+}
+
+/*
+UNEVEN GRID FUNCTION
+*/
+
+$columns: 12;
+$gutter: .1%;
+
+@function grid-width($cols, $has-gutter:false) {
+  
+    @if $has-gutter {
+      @return calc(((100% / #{$columns}) * #{$cols}) - #{$gutter});  
+    }
+    @else {
+      @return calc((100% / #{$columns}) * #{$cols});
+    }
+}
+
+/*
+GENERIC  TRANSITION
+*/
+@mixin transition($att, $time){
+   -webkit-transition: #{$att} ease-out #{$time};
+    -moz-transition: #{$att} ease-out #{$time};
+    -o-transition: #{$att} ease-out #{$time};
+    transition: #{$att} ease-out #{$time};
+}
+
+
+@mixin clip() {
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0;
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+//placeholders 
+%clip {
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0;
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

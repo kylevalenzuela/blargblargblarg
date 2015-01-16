@@ -1,0 +1,63 @@
+@import 'mixins';
+@import 'variables';
+
+.grid-1 {
+	@include rowMachine(1, 1%);
+}
+.grid-2 {
+	@include rowMachine(2, 1%);
+}
+
+.grid-3 {
+	@include rowMachine(3, 1%);
+}
+.grid-4 {
+	@include rowMachine(4, 1%);
+}
+.grid-5 {
+	@include rowMachine(5, 1%);
+}
+.grid-6 {
+	@include rowMachine(6, 1%);
+}
+.grid-7 {
+	@include rowMachine(7, 1%);
+}
+.grid-8 {
+	@include rowMachine(8, 1%);
+}
+.grid-9 {
+	@include rowMachine(9, 1%);
+}
+.grid-10 {
+	@include rowMachine(10, 1%);
+}
+.grid-11 {
+	@include rowMachine(11, 1%);
+}
+.grid-12 {
+	@include rowMachine(12, 1%);
+}
+
+.grid-two-thirds {
+	width: 100%;
+	padding:1%;
+	float: left;
+	@include clearfix();
+	@media screen and (min-width: $bp-xlarge){
+		width: grid-width(8);
+		float:left;
+		padding: 1%;
+	}
+}
+.grid-one-third {
+	width:100%;
+	padding:1%;
+	float: left;
+	@include clearfix();
+	@media screen and (min-width: $bp-xlarge){
+		width: grid-width(4);
+		height: auto;
+		float:left;
+	}
+}
